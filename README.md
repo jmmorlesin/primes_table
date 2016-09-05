@@ -34,3 +34,9 @@ The simplest primality test is trial division: Given an input number n, check wh
 TODO
 
 documentation using elixir or mix?
+
+MultiplicationTable is using length cell defined to 5. It will be better use the max length of the elements in the table instead of this number.
+
+Test - Libraries or methods used:
+
+http://elixir-lang.org/docs/stable/ex_unit/ExUnit.CaptureIO.html
