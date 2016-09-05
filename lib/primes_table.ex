@@ -1,0 +1,2 @@
+defmodule PrimesTable do
+end
