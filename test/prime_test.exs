@@ -40,4 +40,16 @@ defmodule PrimeTest do
     assert !prime?(45)
   end
 
+  test "3 is the next prime from 2" do
+    assert next_prime(2) == 3
+  end
+
+  test "4 is not the next prime from 3" do
+  assert next_prime(3) != 4
+  end
+
+  test "17 is the next prime from 13" do
+    assert next_prime(13) == 17
+  end
+
 end

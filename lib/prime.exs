@@ -10,4 +10,13 @@ defmodule Prime do
     end
   end
 
+  def next_prime(number) do
+    number = number + 1
+    if prime?(number) do
+      number
+    else
+      next_prime(number)
+    end
+  end
+
 end
