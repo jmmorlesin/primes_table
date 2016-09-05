@@ -19,4 +19,18 @@ defmodule Prime do
     end
   end
 
+  def first_n_primes(number) do
+    n_primes([], number, 1)
+  end
+
+  defp n_primes(list, iterations, _start_point) when iterations == 0 do
+    list
+  end
+
+  defp n_primes(list, iterations, start_point) do
+    prime = next_prime(start_point)
+    list = list ++ [prime]
+    n_primes(list, iterations - 1, prime)
+  end
+
 end

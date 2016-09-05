@@ -52,4 +52,11 @@ defmodule PrimeTest do
     assert next_prime(13) == 17
   end
 
+  test "First 10 primes" do
+    n_primes = first_n_primes(10)
+    assert is_list(n_primes)
+    assert length(n_primes) == 10
+    assert n_primes == [2,3,5,7,11,13,17,19,23,29]
+  end
+
 end
