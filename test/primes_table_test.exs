@@ -24,7 +24,39 @@ defmodule PrimesTableTest do
       PrimesTable.main([])
     end
 
-    assert console == "No arguments given\n"
+    assert console ==
+    """
+    No arguments given
+    Usage: primes_table n
+    Where n is a positive number
+    """
+  end
+
+  test "Primes table with not number param" do
+    console = capture_io fn ->
+      PrimesTable.main(["a"])
+    end
+
+    assert console ==
+    """
+    No valid param
+    Usage: primes_table n
+    Where n is a positive number
+    """
+  end
+
+
+  test "Primes table with negative number param" do
+    console = capture_io fn ->
+      PrimesTable.main(["-1"])
+    end
+
+    assert console ==
+    """
+    No valid param
+    Usage: primes_table n
+    Where n is a positive number
+    """
   end
 
 end
