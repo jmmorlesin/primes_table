@@ -1,51 +1,52 @@
 # PrimesTable
 
-**TODO: Add description**
+**Prints a multiplication table of (N) prime numbers using Elixir.**
 
-## Installation
+## How to run the app
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+    This command will create the executable
+    $ mix escript.build
 
-  1. Add `primes_table` to your list of dependencies in `mix.exs`:
+    This will launch the application
+    $ ./primes_table n
+    Where n is a positive integer major than 0
 
-    ```elixir
-    def deps do
-      [{:primes_table, "~> 0.1.0"}]
-    end
-    ```
+##How to run the test
 
-  2. Ensure `primes_table` is started before your application:
+    Launch the test
+    $ mix test
 
-    ```elixir
-    def application do
-      [applications: [:primes_table]]
-    end
-    ```
+## What I'm pleased with
 
-- Launch the test
-mix test
+The code is scalable and developed with the re-usability like a reference point. Each method have the corresponding test and they work in an isolated way, so easily you can change some of the parts.
 
-References
+In order to improve the performance, I checked about different methods to know the primality of a number. See more in the References section.
 
-https://en.wikipedia.org/wiki/Primality_test
+Basically there are 2 modules with the main function:
+  Prime
+    Functionalities to check if the number is a prime, generate the next prime and generate an array with the N first primes.
+  MultiplicationTable
+    Functionalities to generate the multiplication table based on an array (This array could be from primes or another values) and print the table.
+1 module for the entry point in the application:
+  PrimesTable
+    Use the other modules to print the primes table.
+And 1 extra module:
+  NumberUtils
+    Check if the argument is valid for our purpose.
 
-The simplest primality test is trial division: Given an input number n, check whether any prime integer m from 2 to √n evenly divides n (the division leaves noremainder). If n is divisible by any m then n is composite, otherwise it is prime.
+##What I would do with it if I had more time
 
-TODO
+Add documentation using the Elixir solution to create it.
 
-documentation using elixir or mix?
+Read more in depth about Elixir because it changes the way to think in order to do all the functionalities.
 
-MultiplicationTable is using length cell defined to 5. It will be better use the max length of the elements in the table instead of this number.
+Definitely, the functionality to print the table requires refactoring. Currently it is using something similar to a constant 'length_cell' defined in the MultiplicationTable module and takes the value of 5, this means that 5 will be the length for each cell in the table. One option could be use some library like: https://github.com/djm/table_rex
 
-Test - Libraries or methods used:
+Build a library to be used via web or an API.
 
-http://elixir-lang.org/docs/stable/ex_unit/ExUnit.CaptureIO.html
+##References
 
+In order to find the method I used the trial division.
 
-
-Generate the app
-
-mix escript.build
-
-Run the app
-$ ./primes_table 10
+Reference: https://en.wikipedia.org/wiki/Primality_test
+Short description: The simplest primality test is trial division: Given an input number n, check whether any prime integer m from 2 to √n evenly divides n (the division leaves noremainder). If n is divisible by any m then n is composite, otherwise it is prime.
