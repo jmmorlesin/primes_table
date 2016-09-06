@@ -40,3 +40,12 @@ MultiplicationTable is using length cell defined to 5. It will be better use the
 Test - Libraries or methods used:
 
 http://elixir-lang.org/docs/stable/ex_unit/ExUnit.CaptureIO.html
+
+
+
+Generate the app
+
+mix escript.build
+
+Run the app
+$ ./primes_table 10
